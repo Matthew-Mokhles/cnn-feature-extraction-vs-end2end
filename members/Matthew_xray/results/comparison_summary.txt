@@ -1,0 +1,9 @@
+COMPARATIVE ANALYSIS — Matthew_xray
+Dataset: Chest X-Ray (Pneumonia)  |  Model: ResNet50
+============================================================
+SVM (ResNet50 feats)             Acc:0.7500  F1:0.8326  Time:11.0s
+LR  (ResNet50 feats)             Acc:0.7692  F1:0.8431  Time:0.9s
+End-to-End ResNet50              Acc:0.9054  F1:0.9265  Time:3711.2s
+
+Best accuracy : End-to-End ResNet50
+Fastest       : LR  (ResNet50 feats)
