@@ -17,10 +17,6 @@ each carries its own `config.py`, `utils/{metrics,visualization}.py`, step files
 and writes its outputs into its own local `models/` and `results/` subfolders.
 There is no shared `core/` package — pipelines do not import each other.
 
-Currently only Matthew's folder fulfils that contract; the other three folders
-still reference a non-existent `core/` package or missing step files and must be
-finished by their owners before being added back to `MEMBER_MAP` in `main.py`.
-Use `members/Matthew_xray/` as the reference template.
 
 ---
 

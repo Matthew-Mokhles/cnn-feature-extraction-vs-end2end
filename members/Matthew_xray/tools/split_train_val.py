@@ -14,11 +14,13 @@ import argparse
 import os
 import random
 import shutil
+from typing import List   # FIX: use typing.List for Python 3.8 compatibility
+                          # (list[str] subscript syntax requires Python 3.9+)
 
 IMAGE_EXT = (".jpg", ".jpeg", ".png")
 
 
-def _images(folder: str) -> list[str]:
+def _images(folder: str) -> List[str]:
     return sorted(
         f for f in os.listdir(folder)
         if f.lower().endswith(IMAGE_EXT)

@@ -1,0 +1,15 @@
+# Native Windows TensorFlow 2.11+ cannot use NVIDIA CUDA GPUs.
+# Pin TF on Windows to the last CUDA-capable native build.
+tensorflow==2.10.1; platform_system=="Windows"
+tensorflow>=2.11.0; platform_system!="Windows"
+keras>=2.10.0
+scikit-learn>=1.2.0
+# TF 2.10.x wheels were built against NumPy 1.x
+numpy<2; platform_system=="Windows"
+numpy>=1.23.0; platform_system!="Windows"
+pandas>=1.5.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+Pillow>=9.0.0
+tqdm>=4.64.0
+joblib>=1.2.0

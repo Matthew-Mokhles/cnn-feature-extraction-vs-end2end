@@ -1,9 +1,20 @@
 COMPARATIVE ANALYSIS — Matthew_xray
 Dataset: Chest X-Ray (Pneumonia)  |  Model: ResNet50
-============================================================
-SVM (ResNet50 feats)             Acc:0.7500  F1:0.8326  Time:11.0s
-LR  (ResNet50 feats)             Acc:0.7692  F1:0.8431  Time:0.9s
-End-to-End ResNet50              Acc:0.9054  F1:0.9265  Time:3711.2s
+Headline metrics: weighted Precision/Recall/F1. Threshold tuned on val (F1 on PNEUMONIA).
+========================================================================
+SVM (ResNet50 feats)               Acc:0.8045  F1_w:0.7844  AUC:0.9533  PR-AUC:0.9699
+                                   F1_macro:0.7578  F1_pos@0.5:0.8641  thr*:0.08  F1_pos@thr*:0.8071  Time:1705.1s
+LR  (ResNet50 feats)               Acc:0.8237  F1_w:0.8110  AUC:0.9520  PR-AUC:0.9678
+                                   F1_macro:0.7900  F1_pos@0.5:0.8741  thr*:0.46  F1_pos@thr*:0.8610  Time:15.6s
+MLP (ResNet50 feats)               Acc:0.7837  F1_w:0.7578  AUC:0.9525  PR-AUC:0.9678
+                                   F1_macro:0.7266  F1_pos@0.5:0.8515  thr*:0.92  F1_pos@thr*:0.8868  Time:16.4s
+End-to-End ResNet50                Acc:0.9103  F1_w:0.9093  AUC:0.9708  PR-AUC:0.9785
+                                   F1_macro:0.9023  F1_pos@0.5:0.9302  thr*:0.18  F1_pos@thr*:0.8625  Time:5923.4s
 
-Best accuracy : End-to-End ResNet50
-Fastest       : LR  (ResNet50 feats)
+Best accuracy        : End-to-End ResNet50
+Best ROC AUC         : End-to-End ResNet50
+Best PNEUMONIA recall (tuned) : SVM (ResNet50 feats)
+Fastest              : LR  (ResNet50 feats)
+
+What we'd ship:
+  Use End-to-End ResNet50 (highest AUC, threshold-agnostic ranking) at the val-tuned threshold for clinical-style triage. The end-to-end model benefits from the shared Phase-1/Phase-2 checkpoint fix, BatchNorm frozen during fine-tuning, and label smoothing; ML baselines benefit from L2-normalised GAP+GMP features and CV-tuned C/kernel.
