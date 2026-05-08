@@ -8,9 +8,9 @@
 | Alias | Folder | Dataset | Architecture | Status | Run Command |
 |---|---|---|---|---|---|
 | **Matthew** | `members/Matthew_xray/` | Chest X-Ray | ResNet50 | READY | `python main.py --member matthew` |
-| **Mark** | `members/mark_xray/` | Chest X-Ray | VGG16 | WIP (owner: Mark) | — |
-| **Mario** | `members/Mario_plantvillage/` | PlantVillage | ResNet50 | WIP (owner: Mario) | — |
-| **Veronia** | `members/Veronia_cifar10/` | CIFAR-10 | ResNet50 | WIP (owner: Veronia) | — |
+| **Mark** | `members/mark_xray/` | Chest X-Ray | MobileNetV1 | WIP (owner: Mark) | — |
+| **Mario** | `members/Mario_plantvillage/` | PlantVillage | EfficientNet-B0 | WIP (owner: Mario) | — |
+| **Veronia** | `members/Veronia_cifar10/` | CIFAR-10 | EfficientNet-B0 | WIP (owner: Veronia) | — |
 
 The intended architecture is that every member's folder is **fully standalone**:
 each carries its own `config.py`, `utils/{metrics,visualization}.py`, step files,
@@ -43,13 +43,13 @@ Ai project 3/
     │   ├── models/                    ← Local, gitignored
     │   └── results/                   ← Plots committed after a run
     │
-    ├── mark_xray/                     ← Mark (VGG16 + X-Ray)
+    ├── mark_xray/                     ← Mark (MobileNetV1 + X-Ray)
     │   ├── config.py, run.py, step files, utils/, models/, results/
     │
-    ├── Mario_plantvillage/            ← Mario (ResNet50 + PlantVillage 38 cls)
+    ├── Mario_plantvillage/            ← Mario (EfficientNet-B0 + PlantVillage 38 cls)
     │   ├── config.py, run.py, step files, utils/, models/, results/
     │
-    └── Veronia_cifar10/               ← Veronia (ResNet50 + CIFAR-10 builtin)
+    └── Veronia_cifar10/               ← Veronia (EfficientNet-B0 + CIFAR-10 builtin)
         ├── config.py, run.py, step files, utils/, models/, results/
 ```
 
