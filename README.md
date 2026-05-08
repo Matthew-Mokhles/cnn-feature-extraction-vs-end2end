@@ -44,7 +44,13 @@ Ai project 3/
     │   └── results/                   ← Plots committed after a run
     │
     ├── mark_xray/                     ← Mark (MobileNetV1 + X-Ray)
-    │   ├── config.py, run.py, step files, utils/, models/, results/
+    │   ├── config.py
+    │   ├── run.py
+    │   ├── __init__.py
+    │   ├── ChestXRay_WithImprovement.ipynb  ← Colab notebook
+    │   ├── utils/
+    │   ├── models/                    ← Local, gitignored
+    │   └── results/                   ← Plots committed after a run
     │
     ├── Mario_plantvillage/            ← Mario (EfficientNet-B0 + PlantVillage 38 cls)
     │   ├── config.py, run.py, step files, utils/, models/, results/
